@@ -1,0 +1,9 @@
+package com.shop2.myapp.dto;
+
+public class BoardDTO {
+	private int vno;
+    private String vtitle;
+    private String vcontent;
+    private String id;
+    private String regdate;
+}

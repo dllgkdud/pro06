@@ -1,0 +1,6 @@
+package com.shop2.myapp.service;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+}

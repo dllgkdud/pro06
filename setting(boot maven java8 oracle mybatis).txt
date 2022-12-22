@@ -1,0 +1,88 @@
+※ Boot Maven Java8 Oracle Mybatis
+
+	1, pom.xml - ojdbc8으로 초기 설정 되어있음
+	<!-- .xml에서 의존성 변경 시 파일 우클릭 maven > update project 진행 -->
+	<dependency>
+		<groupId>com.oracle.database.jdbc</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>11.2.0.4</version>
+	</dependency>
+
+	2, application.properties - application.yml로 변경해서 사용가능
+	#server setting
+	server.port = 사용할 포트번호(겹치지 않도록)
+
+	# oracle setting - 현장에서는 xe보다는 orcl(original version)로 많이 사용
+	spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+	spring.datasource.url=jdbc:oracle:thin:@localhost:1521/xe
+	spring.datasource.username=system
+	spring.datasource.password=1234
+
+	3, 초기패키지에 담긴 (Myapp)Application.java - 나중에 config 패키지로 옮길 내용
+	@Bean
+	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+		sessionFactory.setDataSource(dataSource);
+		
+		//xml 파일 map 방식으로 연결
+		Resource[] res = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis/mapper/**/*Mapper.xml");
+		sessionFactory.setMapperLocation(res);
+
+		return sessionFactory.getObject();
+	}
+
+	4, config 패키지에 MybatisConfig.java에 내용 옮긴 후 (Myapp)Application.java @Bean은 각주처리
+
+	@Configuration
+	@MapperScan(value = "com.shop2.myapp" ) - myapp 패키지 내부에 있는 bean파일 찾기 가능
+	public class MybatisConfig {
+		@Bean
+		public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+			SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+			sessionFactory.setDataSource(dataSource);
+		
+			//xml 파일 map 방식으로 연결
+			Resource[] res = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis/mapper/**/*Mapper.xml");
+			sessionFactory.setMapperLocation(res);
+
+			return sessionFactory.getObject();
+		}
+
+	5, oracle에서 sample 테이블, 더미데이터 생성 후 적용
+
+	//oracle connecter에 오류가 생기면 cmd로 접근(sqlplus)
+
+	6, SampleMapper.xml 생성
+	namespace에 dao 경로 설정
+
+	7, dto 생성 - SampleDTO - contructor(기본, 전부), getter-setter 설정
+
+	8, dao 생성 - SampleMapper(interface) - 연동
+
+	@Mapper
+	public interface SampleMapper {
+		public List<SampleDTO> findAll() throws Exception;
+		public SampleDTO getSample(String id) throws Exception;
+	}
+
+	9, SampleService, SampleServiceImpl 생성(약한 결합 - interface, java)
+	10, SampleController 생성
+
+	@Controller
+	@RequestMapping("/sample/")
+	public class SampleController {
+
+		@Resource (= @Autowired)
+		private SampleService sampleService;
+
+		@GetMapping("list")
+		public String sampleList(Model model) throws Exception {
+			List<sampleDTO> list = sampleService.findAll();
+			model.addAttribute("list", list);
+			return "sample/list";
+		}
+	}
+
+	11, view 하위 폴더 생성
+
+	12, sqlSessionFactory에 에러 발생 시 MybatisConfig

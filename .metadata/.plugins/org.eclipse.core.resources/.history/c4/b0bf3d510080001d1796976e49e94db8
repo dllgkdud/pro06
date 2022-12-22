@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<hr>
+<footer class="p-3">
+	<div class="container">
+		<div class="d-flex flex-wrap align-items-center justify-content-center">
+	        <ul class="nav col-12 col-lg-auto mt-2 text-center">
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Products</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">New Products</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Bestsellers</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Products for homes</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Designers & Architects</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/sample/list" class="nav-link px-2 link-dark">About Vitra</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">Facts</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Vitra Campus News</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Magazine</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Jobs & Careers</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Contact</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">New Products</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Bestsellers</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Products for homes</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Designers & Architects</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Professionals</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">New Products</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Bestsellers</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Products for homes</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Designers & Architects</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Legal</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">New Products</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Bestsellers</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Products for homes</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Designers & Architects</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Online Shop</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">Cart</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Wish list</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Payment methods</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Shipping conditions</a></li>
+					</ul>
+				</li>
+	        </ul>
+	        <div th:fragment="copyright" class="col-12 col-lg-12 mt-2 text-center" id="copyright">
+				<h6>COPYRIGHT ©2022 VITRA INTERNATIONAL AG. ALL RIGHTS RESERVED</h6>
+			</div>
+		</div>
+	</div>
+</footer>

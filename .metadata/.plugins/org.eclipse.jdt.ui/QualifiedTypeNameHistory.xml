@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.core.io.Resource"/>
+    <fullyQualifiedTypeName name="com.shop2.myapp.model.AjaxMapper"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+</qualifiedTypeNameHistroy>

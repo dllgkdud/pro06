@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+	<title>Vitra | About Vitra</title>
+	<th:block th:insert="/common/head"></th:block>	
+</head>
+<body>
+	<th:block th:insert="/common/header"></th:block>
+	<div class="wrapper">
+		<img th:src="@{/img/30820632.jpg}" class="col-lg-12 col-md-12 col-sm-12" alt="about">
+	</div>
+	<div class="fluvno-container">
+		<div class="container">
+		<h2>공지사항 목록</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="board : ${list}">
+						<td th:text="${board.vno}"></td>
+						<td><a th:href="@{/board/detail(vno=${board.vno})}" th:text="${board.vtitle}"></a></td>
+						<td th:text="${board.regdate}"></td>
+					</tr>
+				</tbody>
+			</table>
+	  	</div>
+	  	<div class="container" role="group">
+			<a class="btn btn-dark" href="#">등록</a>
+		</div>
+	</div>
+	<th:block th:insert="/common/footer"></th:block>
+</body>
+</html>

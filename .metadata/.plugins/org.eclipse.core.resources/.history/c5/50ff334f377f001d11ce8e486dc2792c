@@ -1,0 +1,13 @@
+package com.shop2.myapp.model;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.shop2.myapp.dto.SampleDTO;
+
+@Mapper
+public interface BoardMapper {
+	public List<BoardDTO> findAll() throws Exception;
+	public BoardDTO getSample(int no) throws Exception;
+}

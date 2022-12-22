@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 82 : jQuery 데이터 바인딩 - get</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+    .container { clear:both; width:1000px; margin:20px auto; } 
+    .container:after { content:""; display:block; clear:both; }
+    .data { clear: both; }
+    .data:after { content:""; display:block; clear:both; }
+    #btn1 { width:90px; height:22px; font-size:10px; }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h2>Ajax 문서 송수신 메소드 - ajax()</h2>
+        <article class="data">
+            <div><h2>AJAX Data Trans</h2></div>
+                <table class="table">
+                	<thead>
+                		<tr>
+                			<th>번호</th>
+                			<th>아이디</th>
+                			<th>비밀번호</th>
+                			<th>이름</th>
+                		</tr>
+                	</thead>
+                    <tbody id="result">
+
+                    </tbody>
+                    <div id="msg" cols="4"></div>
+                </table>
+                <br>
+                <button type="button" id="btn1">목록조회</button>
+        </article>
+    </section>
+    <br><hr><br>
+    <script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $.ajax({
+                //요청 데이터를 받아 처리하는 서버/페이지 컨트롤러
+                url:"/ajax/userList.do",
+                //post 방식일 때 서버로 전송할 데이터 String or object
+                //data:id,
+                contentType:'application/json;charset=utf-8;',
+                //전송 방식 : post, get, put
+                method:"GET",
+                //반환받을 데이터타입 : json, xml, script, html
+                dataType:"json"
+            })
+            //요청 처리 성공 시 처리할 문장
+            .done(function(res){
+                console.log(res);
+                $.each(res, function(index, value){
+	                var tr = "<tr>";
+	                tr = tr + "<td>" + (index+1) + "</td>";
+	                tr = tr + "<td>" + value['id'] + "</td>";
+	                tr = tr + "<td>" + value['pw'] + "</td>";
+	                tr = tr + "<td>" + value['name'] + "</td>";
+	                tr = tr + "</tr>";
+	                $("#result").append(tr);
+	            });
+            })
+            //요청 처리 실패 시 처리할 문장
+            .fail(function(xhr, status, errorThrown){
+                $("#msg").text(xhr.status+". 회원 목록을 불러올 수 없습니다.");
+            });
+        });
+    });
+    </script>
+    </div>
+</body>
+</html>

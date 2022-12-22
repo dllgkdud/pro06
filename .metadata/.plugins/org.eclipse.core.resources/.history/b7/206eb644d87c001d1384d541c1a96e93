@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+	<title>샘플</title>
+	
+</head>
+<body>
+<div class="fluid-container">
+	
+	<div class="container">
+	<h2>샘플 목록</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>아이디</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="sample : ${list}">
+					<td th:text="${sample.count}"></td>
+					<td><a th:href="@{/sample/detail(id=${sample.id})}" th:text="${sample.id}"></a></td>
+				</tr>
+			</tbody>
+		</table>
+  	</div>
+</div>
+</body>
+</html>

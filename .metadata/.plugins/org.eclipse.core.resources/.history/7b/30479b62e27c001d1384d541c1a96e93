@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<header id="header">
+	<!--<div th:fragment="logo" id="logo">
+		<span><a th:href="@{/}"></a></span>
+	</div>
+	<nav th:fragment="gnb" id="gnb">
+		<span><a th:href="@{/board/list}">공지사항</a></span>
+		<span><a href="#">QnA</a></span>
+		<span><a href="#">회원관리</a></span>
+	</nav>
+	<nav th:fragment="tnb" id="tnb">
+		<span><a sec:authorize="isAnonymous()" href="#">로그인</a></span>
+		<span><a sec:authorize="isAnonymous()" th:href="@{/user/agree}">회원가입</a></span>
+	</nav>-->
+	<!-- isAnonymous(): 익명의 사용자일 경우, 로그인, 회원가입 버튼을 노출합니다.
+	isAuthenticated(): 인증된 사용자일 경우, 로그아웃 버튼을 노출합니다.
+	hasRole(): 특정 롤을 가진 사용자에 대해, 메뉴를 노출합니다. -->
+	<!-- test -->
+	<div role="tabpanel">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist" id="myTab">
+			<li role="presentation" class="active">
+				<a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+			</li>
+			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+			<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+			<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="home">...</div>
+			<div role="tabpanel" class="tab-pane" id="profile">...</div>
+			<div role="tabpanel" class="tab-pane" id="messages">...</div>
+			<div role="tabpanel" class="tab-pane" id="settings">...</div>
+		</div>
+	</div>
+	<script>
+	$(function () {
+	$('#myTab a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	})
+	
+    $('#myTab a:last').tab('show')
+	})
+	</script>
+</header>
+<hr>

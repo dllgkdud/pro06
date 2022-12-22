@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+/* header */
+.p-3 { padding: 1rem!important; padding-bottom: 0; }
+.d-flex a { padding-right: 20px; padding-bottom: 3px; }
