@@ -1,0 +1,11 @@
+package com.shop2.myapp.model;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.shop2.myapp.dto.UserDTO;
+
+@Mapper
+public interface UserMapper {
+	public void addUser(UserDTO user) throws Exception;
+	public void userLogin(UserDTO user) throws Exception;
+}

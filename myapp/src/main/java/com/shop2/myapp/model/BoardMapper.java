@@ -10,4 +10,8 @@ import com.shop2.myapp.dto.BoardDTO;
 public interface BoardMapper {
 	public List<BoardDTO> boardList() throws Exception;
 	public BoardDTO getBoard(int vno) throws Exception;
+	public void addBoard(BoardDTO board) throws Exception;
+	public void hitsUpdate(int vno) throws Exception;
+	public void updateBoard(BoardDTO board) throws Exception;
+	public void deleteBoard(int vno) throws Exception;
 }

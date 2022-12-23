@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+	<title>Vitra | Join</title>
+	<th:block th:insert="/common/head"></th:block>	
+</head>
+<body>
+	<th:block th:insert="/common/header"></th:block>
+	<div class="fluvno-container">
+		<div class="container">
+		<h2 class="mt-4 text-center">회원가입</h2>
+			<form th:action="@{/user/addUser.do}" th:object="${user}" method="post">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th><label for="id">아이디</label></th>
+							<td>
+								<input type="text" id="id" name="id" th:field="*{id}" class="form-control id" placehorder="아이디">
+								<input type="hidden" id="idCk" name="idCk" value="no">
+                                <input type="button" id="btn1" name="btn" class="btn btn-dark" value="중복확인">
+                                <div id="msg"></div>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="pw">비밀번호</label></th>
+							<td><input type="text" id="pw" name="pw" th:field="*{pw}" class="form-control" placehorder="비밀번호"></td>
+						</tr>
+						<tr>
+							<th><label for="pw2">비밀번호 확인</label></th>
+							<td><input type="text" id="pw2" name="pw2" class="form-control" placehorder="비밀번호"></td>
+						</tr>
+						<tr>
+							<th><label for="name">이름</label></th>
+							<td><input type="text" id="name" name="name" th:field="*{name}" class="form-control" placehorder="이름"></td>
+						</tr>
+						<tr>
+							<th><label for="email">이메일</label></th>
+							<td><input type="text" id="email" name="email" th:field="*{email}" class="form-control" placehorder="이름"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="container" role="group">
+					<input type="submit" class="btn btn-dark" value="회원가입">
+				</div>
+			</form>
+	  	</div>
+	</div>
+	<th:block th:insert="/common/footer"></th:block>
+	<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            var id = $("#id").val();
+            if(id==""){
+                alert("아이디를 입력하십시오");
+                return false;
+            }
+            $.ajax({
+                //요청 데이터를 받아 처리하는 서버/페이지 컨트롤러
+                url:"/ajax/idCheck.do?id="+id,
+                //post 방식일 때 서버로 전송할 데이터 String or object
+                //data:id,
+                contentType:'application/json;charset=utf-8;',
+                //전송 방식 : post, get, put
+                method:"GET",
+                //반환받을 데이터타입 : json, xml, script, html
+                dataType:"json"
+            })
+            //요청 처리 성공 시 처리할 문장
+            .done(function(res){
+                console.log(res);
+                if(res===true){
+					$("#msg").text("사용 가능한 아이디입니다.")
+					.css({"font-size":"12px", "font-weight":"600", "padding":"0.3rem 0 0 1rem", "color":"blue"});
+					$("#idCk").val("yes");
+				} else {
+					$("#msg").text("사용 불가능한 아이디입니다.")
+					.css({"font-size":"12px", "font-weight":"600", "padding":"0.3rem 0 0 1rem", "color":"red"});
+				}				
+            })
+            //요청 처리 실패 시 처리할 문장
+            .fail(function(xhr, status, errorThrown){
+                $("#msg").text("아이디 중복체크를 진행하십시오.");
+            })
+            .always(function(xhr, status){
+
+            });
+        });
+    });
+    </script>
+</body>
+</html>

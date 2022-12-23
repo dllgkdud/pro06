@@ -20,9 +20,19 @@ create table vboard(
     vtitle varchar2(100) not null,
     vcontent varchar2(2000) not null,
     id varchar2(50) not null,
-    regdate date default sysdate
+    regdate date default sysdate,
+    hits int default 0,
+    moddate date
 );
 select * from vboard;
+select to_char(sysdate, 'yyyy-MM-dd') from dual;
+select vno, vtitle, vcontent, to_char(regdate,'yyyy-MM-dd'), hits from vboard;
+alter table vboard drop column hits;
+alter table vboard add hits int default 0;
+alter table vboard add moddate date;
+alter table vboard modify moddate date default sysdate;
+update vboard set hits=hits+1 where vno=1;
+
 
 -- board_sequence
 create sequence vseq increment by 1 start with 1 maxvalue 1000;
@@ -42,17 +52,17 @@ create table user1 (
     email varchar2(200),
     regdate date default sysdate
 );
+select * from user1;
 select * from user1 where (id='admin' and pw='1234');
 alter table user1 add regdate date default sysdate;
+drop table user1 cascade CONSTRAINTS;
 
 -- user1_sequence
 create sequence useq1 increment by 1 start with 1 maxvalue 1000;
+drop sequence useq1;
 
 -- user1_dummy
 insert into user1 values( useq1.nextval, 'admin', '1234', '관리자');
 insert into user1 values( useq1.nextval, 'lhy', '1111', '이하영' );
 update user1 set email='dllgkdud@gmail.com' where id='admin';
 update user1 set regdate=sysdate where id='admin';
-
-
--- user

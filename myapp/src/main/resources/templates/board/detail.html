@@ -15,18 +15,14 @@
 		<div class="container">
 		<h2 class="mt-4 text-center">공지사항 상세</h2>
 			<table class="table">
-				<tbody>
-					<tr th:object="${board}">
+				<tbody th:object="${board}">
+					<tr>
 						<th>번호</th>
 						<td th:text="${board.vno}"></td>
 					</tr>
 					<tr>
 						<th>제목</th>
-						<td th:text="${board.vtitle}"></a></td>
-					</tr>
-					<tr>
-						<th>내용</th>
-						<td th:text="${board.vcontent}"></td>
+						<td th:text="${board.vtitle}"></td>
 					</tr>
 					<tr>
 						<th>작성자</th>
@@ -36,13 +32,17 @@
 						<th>작성일</th>
 						<td th:text="${board.regdate}"></td>
 					</tr>
+					<tr>
+						<th>내용</th>
+						<td th:text="${board.vcontent}"></td>
+					</tr>
 				</tbody>
 			</table>
 	  	</div>
 	  	<div class="container" role="group">
 			<a class="btn btn-light" href="/board/list">목록</a>
-			<a class="btn btn-dark" href="#">수정</a>
-			<a class="btn btn-dark" href="#">삭제</a>
+			<a class="btn btn-dark" th:href="@{/board/update(vno=${board.vno})}">수정</a>
+			<a class="btn btn-dark" th:href="@{/board/delete(vno=${board.vno})}">삭제</a>
 		</div>
 	</div>
 	<th:block th:insert="/common/footer"></th:block>
