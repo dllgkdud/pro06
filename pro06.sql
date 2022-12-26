@@ -32,6 +32,7 @@ alter table vboard add hits int default 0;
 alter table vboard add moddate date;
 alter table vboard modify moddate date default sysdate;
 update vboard set hits=hits+1 where vno=1;
+update vboard set vtitle='공지테스트 제목1입니다.', vcontent='공지테스트 내부에 저장되는 내용1입니다.', id='관리자', moddate=sysdate where vno=1;
 
 
 -- board_sequence

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shop2.myapp.dto.UserDTO;
 import com.shop2.myapp.service.UserService;
@@ -40,12 +41,13 @@ public class UserController {
 	}
 	
 	@GetMapping("login")
-	public String userLoginForm(@ModelAttribute("user") UserDTO User, Model model) throws Exception {
+	public String userLoginForm(Model model) throws Exception {
 		return "user/login";
 	}
 	
-	@PostMapping("login.do")
-	public String userLogin(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model) throws Exception {
+	@GetMapping("login.do")
+	@ResponseBody
+	public UserDTO userLogin(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model) throws Exception {
 		AES256 aes256 = new AES256();
 		pw = aes256.encrypt(pw);
 		UserDTO usr = userService.userLogin(id, pw);
@@ -55,6 +57,6 @@ public class UserController {
 			session.setAttribute("sid", usr.getId());
 			session.setAttribute("sname", usr.getName());
 		}
-		return "index";
+		return usr;
 	}
 }

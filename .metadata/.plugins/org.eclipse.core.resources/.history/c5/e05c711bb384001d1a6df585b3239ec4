@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<hr>
+<footer class="p-3">
+	<div class="container">
+		<div class="sns">
+			<a target="_blank" rel="noopener" class="socialIcon_s1etwgth" href="https://www.youtube.com/vitra" title="">
+				<svg height="1em" viewBox="0 0 52.715 22">
+					<path d="M19.721 17.682h-1.985v-1.15c-.753.863-1.391 1.299-2.087 1.299-.61 0-1.034-.287-1.246-.809-.129-.316-.221-.809-.221-1.535v-8.36h1.985v8.568c.047.293.171.4.424.4.38 0 .724-.33 1.145-.922V7.126h1.985v10.556zM12.719 10.575c0-1.128-.227-1.975-.627-2.508-.529-.722-1.359-1.017-2.195-1.017-.946 0-1.666.295-2.194 1.017-.407.533-.625 1.389-.625 2.517l-.002 3.754c0 1.121.194 1.896.601 2.424.528.721 1.385 1.102 2.221 1.102s1.707-.381 2.236-1.102c.4-.527.585-1.303.585-2.424v-3.763zm-1.986 3.972c.104 1.045-.22 1.562-.836 1.562s-.94-.518-.836-1.562v-4.181c-.104-1.045.22-1.535.836-1.535s.941.489.837 1.535l-.001 4.181zM4.882 11.934v5.748H2.791v-5.748S.626 4.887.179 3.574h2.194L3.84 9.078 5.3 3.573h2.194l-2.612 8.361zM40.143 8.805c-.312 0-.669.165-.985.477l-.002 6.337c.316.316.675.477.987.477.545 0 .791-.4.791-1.445v-4.493c0-1.046-.246-1.353-.791-1.353zM47.059 8.805c-.632 0-.899.267-.899 1.243v1.156l1.776-.002v-1.141c0-.965-.25-1.256-.877-1.256z"></path><path d="M52.225 4.713s-.306-2.141-1.241-3.083C49.798.393 48.467.387 47.858.314 43.49 0 36.94 0 36.94 0h-.014s-6.55 0-10.917.314C25.4.387 24.07.393 22.884 1.63c-.937.943-1.24 3.083-1.24 3.083s-.312 2.514-.312 5.028v2.356c0 2.514.312 5.027.312 5.027s.304 2.141 1.24 3.084c1.187 1.238 2.746 1.197 3.44 1.328 2.496.238 10.609.312 10.609.312s6.557-.01 10.924-.324c.609-.072 1.94-.078 3.126-1.316.936-.943 1.241-3.084 1.241-3.084s.312-2.514.312-5.027V9.741c0-2.514-.311-5.028-.311-5.028zM28.186 17.682h-2.091V5.664H23.9V3.68l6.584-.002v1.985h-2.299v12.019zm7.523 0h-1.985v-1.15c-.753.863-1.391 1.299-2.087 1.299-.609 0-1.034-.287-1.246-.809-.129-.316-.22-.809-.22-1.535V7.231h1.985v8.464c.046.293.171.4.423.4.38 0 .725-.33 1.145-.922V7.231h1.985v10.451zm7.211-3.135c0 .965-.083 1.646-.209 2.09-.253.775-.804 1.18-1.557 1.18-.673 0-1.362-.404-1.994-1.188l-.003 1.053h-1.881V3.678h1.881l-.002 4.565c.611-.752 1.303-1.18 1.999-1.18.753 0 1.26.435 1.512 1.217.127.42.254 1.096.254 2.085v4.182zm7.005-1.777h-3.766v1.877c-.007.965.268 1.449.917 1.449.466 0 .737-.252.846-.758.018-.104.014-.555.014-1.314h1.985v.297c0 .609-.05 1.041-.067 1.23-.063.42-.212.799-.442 1.133-.523.758-1.3 1.133-2.288 1.133-.989 0-1.743-.355-2.29-1.07-.402-.521-.659-1.299-.659-2.408V10.68c0-1.116.234-1.979.636-2.507.548-.714 1.301-1.092 2.267-1.092.949 0 1.702.378 2.232 1.092.396.528.616 1.345.616 2.461v2.136z"></path>
+				</svg>
+			</a>
+			<a target="_blank" rel="noopener" class="socialIcon_s1etwgth" href="https://twitter.com/vitra" title=""><svg height="1em" viewBox="0 0 22 22"><path fill="#333" d="M20.877 4.874a8.127 8.127 0 0 1-2.327.638 4.057 4.057 0 0 0 1.78-2.242 8.086 8.086 0 0 1-2.573.983 4.054 4.054 0 0 0-6.906 3.696 11.497 11.497 0 0 1-8.352-4.234 4.054 4.054 0 0 0 1.253 5.412 4.053 4.053 0 0 1-1.835-.508v.051a4.056 4.056 0 0 0 3.251 3.974 4.042 4.042 0 0 1-1.83.07 4.052 4.052 0 0 0 3.785 2.814 8.118 8.118 0 0 1-5.033 1.735c-.327 0-.649-.02-.967-.057a11.468 11.468 0 0 0 6.212 1.82c7.454 0 11.532-6.174 11.532-11.53 0-.175-.005-.351-.013-.525a8.2 8.2 0 0 0 2.023-2.097z"></path></svg></a><a target="_blank" rel="noopener" class="socialIcon_s1etwgth" href="https://www.facebook.com/vitra" title=""><svg height="1em" viewBox="0 0 22.001 22"><path fill="#333" d="M20.787 0H1.215C.543 0 0 .543 0 1.214v19.572C0 21.457.543 22 1.215 22h10.537v-8.519H8.884V10.16h2.867V7.711c0-2.841 1.736-4.389 4.271-4.389 1.214 0 2.258.09 2.562.131v2.97h-1.758c-1.378 0-1.646.655-1.646 1.616v2.12h3.288l-.429 3.321H15.18V22h5.606c.67 0 1.214-.543 1.214-1.214V1.214A1.212 1.212 0 0 0 20.787 0z"></path></svg></a><a target="_blank" rel="noopener" class="socialIcon_s1etwgth" href="https://www.pinterest.com/vitra" title=""><svg height="1em" viewBox="0 0 22.002 22"><path fill="#333" d="M11 0C4.925 0 0 4.924 0 11c0 4.66 2.899 8.641 6.99 10.243-.095-.871-.183-2.207.04-3.156.2-.858 1.289-5.468 1.289-5.468s-.329-.657-.329-1.632c0-1.53.887-2.671 1.991-2.671.939 0 1.392.705 1.392 1.549 0 .943-.602 2.355-.913 3.663-.259 1.094.55 1.987 1.63 1.987 1.954 0 3.458-2.061 3.458-5.037 0-2.634-1.891-4.476-4.594-4.476-3.131 0-4.968 2.348-4.968 4.773 0 .945.364 1.958.818 2.51.09.108.104.205.076.316-.083.347-.269 1.094-.305 1.246-.048.202-.159.245-.368.149-1.374-.639-2.231-2.647-2.231-4.262 0-3.47 2.521-6.656 7.266-6.656 3.819 0 6.783 2.719 6.783 6.353 0 3.79-2.391 6.84-5.709 6.84-1.113 0-2.162-.576-2.522-1.261 0 0-.551 2.098-.683 2.616-.249.955-.92 2.151-1.368 2.883C8.772 21.826 9.867 22 11 22c6.076 0 11.002-4.926 11.002-11 0-6.076-4.925-11-11.002-11"></path></svg></a><a target="_blank" rel="noopener" class="socialIcon_s1etwgth" href="https://www.instagram.com/vitra" title=""><svg height="1em" viewBox="0 0 22 22"><path fill-rule="evenodd" clip-rule="evenodd" fill="#333" d="M2.538 22h16.924A2.54 2.54 0 0 0 22 19.461V2.538A2.538 2.538 0 0 0 19.462 0H2.538A2.538 2.538 0 0 0 0 2.538v16.923A2.538 2.538 0 0 0 2.538 22zM15.232 3.384c0-.467.378-.846.845-.846h2.538c.469 0 .848.379.848.846v2.539a.847.847 0 0 1-.848.846h-2.538a.845.845 0 0 1-.845-.846V3.384zM11 6.769a4.231 4.231 0 1 1 .001 8.463A4.231 4.231 0 0 1 11 6.769zM2.538 9.307h1.916A6.745 6.745 0 0 0 4.231 11a6.77 6.77 0 0 0 13.539 0c0-.586-.085-1.152-.222-1.693h1.914v9.309a.847.847 0 0 1-.848.846H3.385a.846.846 0 0 1-.847-.846V9.307z"></path></svg></a><a target="_blank" rel="noopener" class="socialIcon_s1etwgth" href="https://www.linkedin.com/company/vitra" title=""><svg height="1em" viewBox="0 0 22 22"><path fill="#333" d="M20.371 0H1.623C.728 0 0 .71 0 1.585v18.827C0 21.289.728 22 1.623 22h18.748c.896 0 1.63-.711 1.63-1.588V1.585C22 .71 21.267 0 20.371 0zM6.527 18.746H3.26V8.248h3.267v10.498zM4.895 6.812a1.891 1.891 0 1 1 0-3.784 1.892 1.892 0 0 1 0 3.784zm13.851 11.934h-3.26v-5.104c0-1.218-.024-2.784-1.696-2.784-1.697 0-1.957 1.326-1.957 2.695v5.193H8.574V8.248h3.128v1.434h.044c.435-.826 1.5-1.696 3.088-1.696 3.301 0 3.911 2.174 3.911 5.001v5.759z"></path></svg></a></div>
+		<div class="d-flex flex-wrap align-items-center justify-content-center">
+	        <ul class="nav col-12 col-lg-auto mt-2 text-center">
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Products</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">New Products</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Bestsellers</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Products for homes</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Designers & Architects</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/sample/list" class="nav-link px-2 link-dark">About Vitra</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">Facts</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Vitra Campus News</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Magazine</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Jobs & Careers</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Contact</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">Contact Vitra</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Find Vitra</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Vitra Companies</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Vitra Circle Stores</a></li>
+					</ul>
+				</li>
+				<!--
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Professionals</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">Downloads</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Projects</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Our Clients</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Tools</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Legal</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">Distribution rights</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Imprint</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Privacy Policy</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Website Terms of Use</a></li>
+					</ul>
+				</li>
+				-->
+				<li>
+					<a href="#" class="nav-link px-2 link-dark">Online Shop</a>
+					<ul class="col-12 col-lg-auto mt-2 text-center">
+						<li><a href="#" class="nav-link px-2 link-secondary">Cart</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Wish list</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Payment methods</a></li>
+						<li><a href="#" class="nav-link px-2 link-secondary">Shipping conditions</a></li>
+					</ul>
+				</li>
+	        </ul>
+	        <div th:fragment="copyright" class="col-12 col-lg-12 mt-4 text-center" id="copyright">
+				<h6>COPYRIGHT ©2022 VITRA INTERNATIONAL AG. ALL RIGHTS RESERVED</h6>
+			</div>
+		</div>
+	</div>
+</footer>
