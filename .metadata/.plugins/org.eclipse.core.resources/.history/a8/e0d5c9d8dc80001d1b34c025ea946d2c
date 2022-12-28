@@ -1,6 +1,0 @@
-package com.shop2.myapp.config;
-
-@SuppressWarnings("d")
-public class SecurityConfiguration {
-
-}

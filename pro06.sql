@@ -67,3 +67,12 @@ insert into user1 values( useq1.nextval, 'admin', '1234', '관리자');
 insert into user1 values( useq1.nextval, 'lhy', '1111', '이하영' );
 update user1 set email='dllgkdud@gmail.com' where id='admin';
 update user1 set regdate=sysdate where id='admin';
+
+-- products
+create table products(
+    pn varchar2(100) primary key,
+    comment varchar2(1000) not null,
+    img varchar2(2000),
+    designer varchar2(100),
+    regdate date default sysdate
+);

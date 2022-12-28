@@ -1,17 +1,30 @@
 package com.shop2.myapp.controller;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.shop2.myapp.dto.UserDTO;
 import com.shop2.myapp.service.AjaxService;
@@ -69,7 +82,7 @@ public class AjaxController {
 		return user;
 	}
 	
-	//test3 로딩
+	//test4 로딩
 	@GetMapping("test4")
 	public String testLoad4() throws Exception {
 		return "ajax/test4";
@@ -91,5 +104,5 @@ public class AjaxController {
 			session.setAttribute("sname", usr.getName());
 		}
 		return usr;
-	}	
+	}
 }

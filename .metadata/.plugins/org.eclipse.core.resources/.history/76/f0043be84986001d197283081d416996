@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+	<title>Vitra | Products</title>
+	<th:block th:insert="/common/head"></th:block>	
+</head>
+<body>
+	<th:block th:insert="/common/header"></th:block>
+	<div class="fluvno-container">
+		<div class="container">
+		<h2 class="mt-4 text-center">제품 등록</h2>
+			<form id='add'>
+				<!--<table class="table">
+					<tbody>
+						<tr>
+							<th>상품</th>
+							<td><input type="text" id="pname" th:field="*{pname}" class="form-control"></td>
+						</tr>
+						<tr>
+							<th>내용</th>
+							<td><textarea cols="100" rows="20" id="comment" th:field="*{comment}" class="form-control"></textarea></td>
+							<td>-->
+								<label for="img_upload" id="addBtn">이미지 추가</label>
+								<input type="file" name="img_upload" id="img_upload" onchange="previewImage(this,'View_area')" style="display: none;" multiple>
+								<span id='View_area' style='display:block; position:relative; color:black; border: 0px solid black;'></span>
+						<!--</td>
+						</tr>
+					</tbody>
+				</table>-->
+				<div class="container" role="group">
+					<a class="btn btn-light" href="/products/list">목록</a>
+					<input type="button" class="btn btn-dark" value="작성">
+				</div>
+			</form>
+	  	</div>
+	</div>
+	<th:block th:insert="/common/footer"></th:block>
+</body>
+</html>

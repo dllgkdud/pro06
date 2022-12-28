@@ -1,0 +1,72 @@
+package com.shop2.myapp.controller;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.shop2.myapp.dto.UserDTO;
+import com.shop2.myapp.service.UserService;
+import com.shop2.myapp.util.AES256;
+
+@Controller
+@RequestMapping("/user/")
+public class UserController {
+	
+	@Resource
+	private UserService userService;
+	
+	@Autowired
+	HttpSession session;
+	
+	@GetMapping("add")
+	public String userAddForm(@ModelAttribute("user") UserDTO user, Model model) throws Exception {
+		return "user/add";
+	}
+	
+	@PostMapping("addUser.do")
+	public String userAdd(@ModelAttribute("user") UserDTO user, Model model) throws Exception {
+		AES256 aes256 = new AES256();
+		user.setPw(aes256.encrypt(user.getPw()));
+		userService.addUser(user);
+		return "index";
+	}
+	
+	@GetMapping("login")
+	public String userLoginForm(Model model) throws Exception {
+		return "user/login";
+	}
+	
+	@GetMapping("login.do")
+	@ResponseBody
+	public UserDTO userLogin(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model, HttpServletRequest request) throws Exception {
+		AES256 aes256 = new AES256();
+		pw = aes256.encrypt(pw);
+		HttpSession session = request.getSession();
+		UserDTO usr = userService.userLogin(id, pw);
+		if(usr==null) {
+			session.invalidate();
+		} else {
+			session.setAttribute("logUsr", usr);
+			session.setAttribute("sid", usr.getId());
+			session.setAttribute("sname", usr.getName());
+		}
+		return usr;
+	}
+	
+	//로그아웃
+	@GetMapping("logout")
+	public String memberLogout(HttpSession session) throws Exception {
+		session.invalidate();
+		return "/";
+	}
+}

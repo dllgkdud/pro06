@@ -1,0 +1,23 @@
+package com.shop2.myapp.controller;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.shop2.myapp.service.BoardService;
+
+@Controller
+@RequestMapping("/products/")
+public class ProductsController {
+	
+	@Resource
+	private BoardService boardService;
+	
+	@GetMapping("list")
+	public String ProductList(Model model) throws Exception {
+		return "products/list";
+	}
+}

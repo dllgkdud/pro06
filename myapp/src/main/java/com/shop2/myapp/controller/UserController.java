@@ -1,6 +1,7 @@
 package com.shop2.myapp.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,16 +48,24 @@ public class UserController {
 	
 	@GetMapping("login.do")
 	@ResponseBody
-	public UserDTO userLogin(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model) throws Exception {
+	public UserDTO userLogin(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model, HttpServletRequest request) throws Exception {
 		AES256 aes256 = new AES256();
 		pw = aes256.encrypt(pw);
+		HttpSession session = request.getSession();
 		UserDTO usr = userService.userLogin(id, pw);
 		if(usr==null) {
 			session.invalidate();
 		} else {
+			session.setAttribute("logUsr", usr);
 			session.setAttribute("sid", usr.getId());
 			session.setAttribute("sname", usr.getName());
 		}
 		return usr;
+	}
+	
+	@GetMapping("logout")
+	public String memberLogout(HttpSession session) throws Exception {
+		session.invalidate();
+		return "redirect:/";
 	}
 }
