@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+	<title>Vitra | Products</title>
+	<th:block th:insert="/common/head"></th:block>	
+</head>
+<body>
+	<th:block th:insert="/common/header"></th:block>
+	<div class="fluvno-container">
+		<div class="container">
+		<h2 class="mt-4 text-center">제품 등록</h2>
+			<form id='add'>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>제품</th>
+							<td><input type="text" id="pname" th:field="*{pname}" class="form-control"></td>
+						</tr>
+						<tr>
+							<th>내용</th>
+							<td><textarea cols="100" rows="20" id="pcomment" th:field="*{pcomment}" class="form-control"></textarea></td>
+						</tr>
+						<tr>
+							<th>이미지</th>
+							<td>-->
+								<label for="img_upload" id="addBtn">이미지 추가</label>
+								<input type="file" name="img_upload" id="img_upload" onchange="previewImage(this,'View_area')" style="display: none;" multiple>
+								<span id='View_area' style='display:block; position:relative; color:black; border: 0px solid black;'></span>
+								<input type="button" class="btn btn-light" id="submitBtn" onclick="dataSubmit();" value="전송하기"/>
+		            			
+		            			<ul id="resultDiv"></ul>
+						        <div id="inputData"></div>
+							</td>
+						</tr>
+						<tr>
+							<th>디자이너</th>
+							<td><input type="text" id="designer" th:field="*{designer}" class="form-control"><td>
+						</tr>
+						<tr>
+							<th>가격</th>
+							<td><input type="text" id="price" th:field="*{price}" class="form-control"><td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="container" role="group">
+					<a class="btn btn-light" href="/products/list">목록</a>
+					<input type="button" id="proBtn" class="btn btn-dark" value="작성">
+				</div>
+			</form>
+			<script>
+			function dataSubmit() {
+				var maxSize = 10 * 1024 * 1024;
+				var sendData = "";
+				if ($('#img_upload')[0].files.length >= 4) {
+					alert("첨부 가능한 개수를 초과하였습니다. 3개 까지 첨부가 가능합니다.");
+				    return false;
+				}
+				for(var i in $('#img_upload')[0].files){
+					if ($('#img_upload')[0].files[i].size > maxSize) {
+						alert("첨부된 파일 중에 용량이 초과된 파일이 있습니다.\n이미지를 더블클릭하여 삭제 후 다시 선택하여 주시기 바랍니다.");
+					    return false;
+					}
+				}
+				
+				var form = $("#add")[0]; 
+			    var data = new FormData(form);
+			 
+			    $.ajax({
+			        url: "/products/url.do",
+			        type: "POST",
+			        enctype: 'multipart/form-data',
+			        data: data,
+			        processData: false,
+			        contentType: false,
+			        dataType:"json",
+			    }).done(function (qty) {
+					console.log(qty);
+					$.each(qty, function(index, value){
+						$("#resultDiv").append("<li>"+value+"</li>");
+						$("#inputData").append("<input type='hidden' name='imgSrc"+index+"' value='"+value+"'>");
+						sendData += "<input type='hidden' name='imgSrc"+index+"' value='"+value+"'>";
+					});
+			    });
+			}
+            </script>
+            <script src="/js/imageLoad.js"></script>
+	  	</div>
+	</div>
+	<th:block th:insert="/common/footer"></th:block>
+</body>
+</html>

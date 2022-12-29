@@ -51,7 +51,6 @@ public class ProductsController {
 	@RequestMapping(value="url.do", method = {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody
     public List<String> getData(Model model, MultipartHttpServletRequest req){
-		
         List<MultipartFile> multipartFileList = new ArrayList<>(); 
         List<String> fileQt = new ArrayList<String>();
         try {
@@ -65,8 +64,8 @@ public class ProductsController {
                     String fileName = originalName.substring(originalName.lastIndexOf("//")+1);
                     //날짜 폴더 생성
                     String folderPath = makeFolder();
-                    String uuid = UUID.randomUUID().toString();
                     //UUID
+                    String uuid = UUID.randomUUID().toString();
                     //저장할 파일 이름 중간에 "_"를 이용하여 구분
                     String saveName = uploadPath + File.separator + folderPath +File.separator + uuid + "_" + fileName;                    
                     Path savePath = Paths.get(saveName);

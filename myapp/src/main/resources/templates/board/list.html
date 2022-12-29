@@ -25,7 +25,6 @@
 				</thead>
 				<tbody>
 					<tr th:each="board : ${list}">
-					
 						<td th:text="${board.vno}"></td>
 						<td><a th:href="@{/board/detail(vno=${board.vno})}" th:text="${board.vtitle}"></a></td>
 						<td th:text="${board.regdate}"></td>
@@ -35,9 +34,10 @@
 			</table>
 	  	</div>
 	  	<div class="container" role="group">
-	  	<th:block th:if="${sid == 'admin'}">
+	  		<a class="btn btn-dark" href="/board/add">등록</a>
+	  	<!--<th:block th:if="${sid == 'admin'}">
 			<a class="btn btn-dark" href="/board/add">등록</a>
-	  	</th:block>
+	  	</th:block>-->
 		</div>
 	</div>
 	<th:block th:insert="/common/footer"></th:block>

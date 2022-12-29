@@ -30,7 +30,10 @@
 			</table>
 	  	</div>
 	  	<div class="container" role="group">
+	  		<a class="btn btn-dark" th:href="@{/products/add}">등록</a>
+	  	<!--<th:block th:if="${sid == 'admin'}">
 			<a class="btn btn-dark" href="/products/add">등록</a>
+	  	</th:block>-->
 		</div>
 	</div>
 	<th:block th:insert="/common/footer"></th:block>

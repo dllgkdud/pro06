@@ -1,0 +1,10 @@
+package com.shop2.myapp.dto;
+
+public class ProductsDTO {
+    private String pname;
+    private String pcomment;
+    private String img;
+    private long price;
+    private String designer;
+    regdate date default sysdate
+}

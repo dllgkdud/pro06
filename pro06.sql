@@ -69,10 +69,12 @@ update user1 set email='dllgkdud@gmail.com' where id='admin';
 update user1 set regdate=sysdate where id='admin';
 
 -- products
-create table products(
-    pn varchar2(100) primary key,
-    comment varchar2(1000) not null,
+create table products (
+    pname varchar2(100) primary key,
+    pcomment varchar2(1000) not null,
     img varchar2(2000),
+    price number,
     designer varchar2(100),
     regdate date default sysdate
 );
+select * from products;
